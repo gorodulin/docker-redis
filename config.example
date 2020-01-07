@@ -1,0 +1,18 @@
+SCRIPT=`realpath -s $0`
+PROJECTROOT=`dirname $SCRIPT`
+
+#
+# Config
+#
+
+NETWORK_NAME="nginx-proxy-net"
+
+REDIS_VERSION="5.0.7-alpine3.11"
+REDIS_CONTAINER_NAME="redis"
+REDIS_CONTAINER_HOSTNAME="redis"
+REDIS_DATA_VOLUME_PATH=$PROJECTROOT/volumes/redis_data
+
+
+# Helper function. Prints commands
+
+exe() { echo -e "\n$(tput setaf 6)$@$(tput sgr0)" ; "$@" ; }
