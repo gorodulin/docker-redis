@@ -10,7 +10,8 @@ NETWORK_NAME="nginx-proxy-net"
 REDIS_VERSION="5.0.7-alpine3.11"
 REDIS_CONTAINER_NAME="redis"
 REDIS_CONTAINER_HOSTNAME="redis"
-REDIS_DATA_VOLUME_PATH=$PROJECTROOT/volumes/redis_data
+REDIS_DATA_VOLUME_PATH=/volumes/redis/data/
+REDIS_CONF_VOLUME_PATH=/volumes/redis/redis.conf
 
 
 # Helper function. Prints commands

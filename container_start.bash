@@ -8,13 +8,13 @@ exe chmod 777 $REDIS_DATA_VOLUME_PATH
 # Run container
 
 exe docker run \
-  --rm \
+  --restart always \
   --detach \
   --name=$REDIS_CONTAINER_NAME \
   --hostname=$REDIS_CONTAINER_HOSTNAME \
   --network=$NETWORK_NAME \
-  --volume=$ROOTPATH/redis.conf:/etc/redis/redis.conf \
+  --volume=$REDIS_DATA_VOLUME_PATH:/shared/redis_data \
+  --volume=$REDIS_CONF_VOLUME_PATH:/etc/redis/redis.conf \
   redis:$REDIS_VERSION redis-server /etc/redis/redis.conf
 
-#--volume=$REDIS_DATA_VOLUME_PATH:/data \
 
